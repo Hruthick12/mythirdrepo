@@ -15,14 +15,14 @@ pipeline {
             steps {
                
                 parallel(
-                "1": {dir("dir1"){script{checkout_git.checkout_git("java-hello-world-with-maven")}}}
+                "1": {dir("dir1"){script{checkout_git.checkout_git("simple-java-maven-app")}}}
                 )
                         }
                   }                                
          stage('Trigger AWS Code Build') {
             steps {
                 parallel(
-                "1": {dir("dir1"){script{aws_codebuild.aws_codebuild("java-project")}}}
+                "1": {dir("dir1"){script{aws_codebuild.aws_codebuild("java-project2")}}}
                 )
                         }
                   }                     
