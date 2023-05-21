@@ -6,7 +6,7 @@ pipeline {
         
         stage('Checkout code from Git.') {
             steps {                
-                script {checkout_git.checkout_git("mythirdrepo", "main")}
+                script {checkout_git.checkout_git("my-app-1.0", "main")}
             }
             }
         
