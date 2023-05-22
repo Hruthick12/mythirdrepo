@@ -5,17 +5,21 @@ pipeline {
     stages {
         
         stage('Checkout code from Git') {
-            steps {                
+            steps {   
+                dir("tag_code"){         
                 script {checkout_git.checkout_git("mythirdrepo", "main")}
             }
             }
+        }
         
          stage('create tag on git repo') {
             steps {
+                dir("tag_code"){
                 script {create_tag.create_tag("${tag}")}
             }
             }
         }
+}
 }
         
         
