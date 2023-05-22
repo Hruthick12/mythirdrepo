@@ -4,13 +4,13 @@ pipeline {
     
     stages {
         
-        stage('Checkout code from Git.') {
+        stage('Checkout code from Git') {
             steps {                
-                script {checkout_git.checkout_git("my-app-1.0", "main")}
+                script {checkout_git.checkout_git("mythirdrepo", "main")}
             }
             }
         
-         stage('create tag on git repo.') {
+         stage('create tag on git repo') {
             steps {
                 script {create_tag.create_tag("${tag}")}
             }
